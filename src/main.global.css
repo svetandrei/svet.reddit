@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --black:          #333333;
+  --orange:         #CC6633;
+  --green:          #A4CC33;
+  --whiteLightness: 100%;
+  --white:          hsl(0, 0%, var(--whiteLightness));
+  --grayF4:         hsl(0, 0%, calc(var(--whiteLightness) - 4%));
+  --greyF3:         hsl(0, 0%, calc(var(--whiteLightness) - 5%));
+  --greyEC:         hsl(0, 0%, calc(var(--whiteLightness) - 7%));
+  --greyD9:         hsl(0, 0%, calc(var(--whiteLightness) - 15%));
+  --greyC4:         hsl(0, 0%, calc(var(--whiteLightness) - 23%));
+  --grey99:         hsl(0, 0%, calc(var(--whiteLightness) - 40%));
+  --grey66:         hsl(0, 0%, calc(var(--whiteLightness) - 60%));
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--grayF4);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  font-family: 'Roboto', serif;
+}
+
+* {
+  color: var(--black);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.pre-loader {
+  position: relative;
+  margin: 100px 0 150px;
+  text-align:center
+}
+.pre-loader .pre-container {
+  height: 40px;
+  width: 40px;
+  background: var(--orange);
+  border-radius: 100%;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 100;
+}
+
+.pre-loader div {
+  background: #fff;
+  height:14px;
+  width:14px;
+  border-radius:100%;
+  position: absolute;
+  margin:auto;
+}
+
+.pre-ball-one {
+  top:0;
+  left:0;
+  right:65px;
+  bottom:65px;
+  animation: anim 2s infinite ease-in;
+}
+
+@keyframes anim {
+  0%{
+    background: var(--green);
+    right:65px;
+    bottom:65px;
+    z-index:150;
+  }
+  33%{
+    right:-65px;
+    bottom:-65px;
+  }
+  66%{
+    width:10px;
+    height:10px;
+  }
+  99%{
+    right:65px;
+    bottom:65px;
+    height:14px;
+    width:14px;
+    z-index:0;
+  }
+  100%{
+    background: var(--green);
+  }
+}
+
+.pre-ball-two {
+  top:0;
+  right:0;
+  left:65px;
+  bottom:65px;
+  animation: anim-two 2s infinite ease-in;
+  animation-delay: .4s;
+}
+
+@keyframes anim-two {
+  0%{
+    background: var(--green);
+    left:65px;
+    bottom:65px;
+    z-index:150;
+  }
+  33%{
+    left:-65px;
+    bottom:-65px;
+  }
+  66%{
+    width:10px;
+    height:10px;
+  }
+  99%{
+    left:65px;
+    bottom:65px;
+    height:14px;
+    width:14px;
+    z-index:0;
+  }
+  100%{
+    background: var(--green);
+  }
+}
+
+.pre-ball-three {
+  top:-65px;
+  right:0;
+  left:0;
+  bottom:0;
+  animation: anim-three 2s infinite ease-in;
+  animation-delay: .8s;
+}
+
+@keyframes anim-three {
+  0%{
+    background: var(--green);
+    top:-65px;
+    z-index:150;
+  }
+  33%{
+    top:65px;
+  }
+  66%{
+    width:10px;
+    height:10px;
+  }
+  99%{
+    top:-65px;
+    height:14px;
+    width:14px;
+    z-index:0;
+  }
+  100%{
+    background: var(--green);
+  }
+}
